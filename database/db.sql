@@ -4,10 +4,12 @@ use trivias;
 --tabala de usaruios
 CREATE TABLE usuarios(
     id serial not null auto_increment primary key,
-    username varchar(16) not null,
-    password varchar(60) not null,
-    full_name varchar(255) not null
-);
+    firstname varchar(16) not null,
+    lastname varchar(60) not null,
+    email varchar(255) not null,
+    username varchar(255) not null,
+    password varchar(255) not null
+);  
 
 alter table usuarios 
 modify aqui va el codigo;
