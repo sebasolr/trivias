@@ -1,0 +1,29 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-5 mx-auto">
+            <div class="card">
+                <form action="/links/question" method="post">
+                <div class="form-group mb-3">
+                    <h5 class="text-center mb-3">Agregar preguntas</h5>
+                    <input type="text" class="form-control" name="question" placeholder="question" autofocus required>
+                </div>
+                 <div class="form-group mb-3">
+                    <input type="text" class="form-control" name="answer_correct" placeholder="answer correct" required>
+                </div>
+                <div class="form-group mb-3">
+                    <input type="text" class="form-control" name="answer_incorrect_one" placeholder="answer incorrect" placeholder="url" required>
+                </div>
+                <div class="form-group mb-3">
+                    <input type="text" class="form-control" name="answer_incorrect_two" placeholder="answer incorrect" placeholder="url" required>
+                </div>
+                <div class="form-group mb-3">
+                    <input type="text" class="form-control" name="answer_incorrect_three" placeholder="answer incorrect" placeholder="url" required>
+                </div>
+                <div class="d-grid gap-2 mb-3">
+                    <button type="submit" class="btn btn-success "> Save </button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

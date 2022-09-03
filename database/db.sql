@@ -17,11 +17,11 @@ modify aqui va el codigo;
 --tabla de preguntas
 CREATE TABLE preguntas(
     id serial not null auto_increment primary key,
-    pregunta varchar(255) not null default,
-    respuesta_correcta varchar(255) not null,
-    pregunta_incorrecta1 varchar(255) not null,
-    pregunta_incorrecta2 varchar(255) not null,
-    pregunta_incorrecta3 varchar(255) not null,
+    question varchar(255) not null,
+    answer_correct varchar(255) not null,
+    answer_incorrect_one varchar(255) not null,
+    answer_incorrect_two varchar(255) not null,
+    answer_incorrect_three varchar(255) not null
 );
 
 --relacion entre tablas 
