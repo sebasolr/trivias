@@ -14,7 +14,8 @@ router.post('/login', (req, res) => {
         username, 
         password};
         console.log(newLogin);
-    res.send('testing')
+        req.flash('success', 'Welcome! You have successfully signed up');
+    res.redirect('/links/login')
 });
 
 //registro de usuario en la base de datos
