@@ -9,17 +9,17 @@ passport.use('local.signin', new LocalStrategy({
     passwordField: 'password',
     passReqToCallback: true
 }, async (req,username, password,done) =>{
-   const rows= await pool.query(`select * from usuarios where username = ?`[username])
+   const rows = await pool.query('select * from usuarios where username = ?',[username])
     if (rows.length > 0) {
         const user = rows[0];
         const validando = await helper.matchPassword(password, user.password)
         if(validando) {
-            done(null,user,req.flash('Bienvenido'+  username));}
+            done(null,user,req.flash('success','Bienvenido'+  username));}
             else {
-                done(null,false,req.flash('Clave incorrecta'));
+                done(null,false,req.flash('message','Clave incorrecta'));
             }}
     else{
-        return done(null,false,req.flash('El username no es correcto'))
+        return done(null,false,req.flash('message','El username no es correcto'))
     }
 
 })) 
@@ -49,6 +49,6 @@ passport.serializeUser((user,done) =>{
 });
 
 passport.deserializeUser(async (id,done) =>{
-    pool.query ('SELECT * FROM usuarios where id = ?',[id]);
-    done(null, id);
+    const rows = await pool.query ('SELECT * FROM usuarios where id = ?',[id]);
+    done(null, rows[0]);
 });
