@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const passport = require('passport');
 
 const { isLoggedIn, isNotloggedIn } = require('../lib/auth')
 //conecion a base de datos.
@@ -29,5 +30,12 @@ router.get('/test',isLoggedIn, async (req, res) => {
     const questions = await pool.query('SELECT * FROM preguntas');
     res.render('links/test',{questions:questions})
 });
+
+
+router.post('/test',isLoggedIn,async (req, res,) => {
+
+    res.redirect('/profile')
+})
+  
 
 module.exports = router;
